@@ -1,0 +1,38 @@
+===BEGIN DHCP SUBMISSION===
+student_id: 6705142025
+timestamp: 2026-09-23T09:26:25Z
+hostname: ubuntu
+---[dhcpd.conf]---
+default-lease-time 7200;
+max-lease-time 7200;
+authoritative;
+
+# Physical network of enp1s0 - empty, no leases handed out here
+subnet 172.30.1.0 netmask 255.255.255.0 {
+}
+
+# Your assigned subnet for this lab
+subnet 192.168.127.0 netmask 255.255.255.0 {
+  range 192.168.127.71 192.168.127.171;
+  option routers 192.168.127.1;
+  option subnet-mask 255.255.255.0;
+
+  host student6705142025 {
+    hardware ethernet 52:54:00:62:aa:a5;
+    fixed-address 192.168.127.239;
+  }
+}
+---[config syntax test: dhcpd -t]---
+Internet Systems Consortium DHCP Server 4.4.3-P1
+Copyright 2004-2022 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+WARNING: Host declarations are global.  They are not limited to the scope you declared them in.
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+---[service status]---
+active
+---[integrity]---
+conf_sha256: 2612ebfa5b27767925aedceea30f83650e6aaa909c05a198ee5c8c4eda3d0634
+===END DHCP SUBMISSION===
