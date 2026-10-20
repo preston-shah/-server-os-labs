@@ -1,0 +1,4 @@
+PATH=/usr/local/bin:/usr/bin:/bin
+* * * * * echo "Cron ran at $(date)" >> /var/log/labcron/heartbeat.log
+*/5 * * * * df -h / >> /var/log/labcron/disk-usage.log
+0 2 * * * /usr/local/bin/backup.sh

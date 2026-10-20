@@ -1,0 +1,4 @@
+#!/bin/bash
+# Remove temp files older than 7 days
+find /tmp -type f -mtime +7 -delete 2>/dev/null
+echo "$(date): Temp cleanup ran" >> /var/log/labcron/cleanup.log

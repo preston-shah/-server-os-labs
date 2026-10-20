@@ -1,0 +1,2 @@
+# Check disk usage every 10 minutes
+*/10 * * * * root df -h / >> /var/log/labcron/system-disk.log 2>&1
